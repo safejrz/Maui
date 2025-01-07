@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App"
              x:Class="App9.MainPage">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            <Label Text="{x:OnPlatform Android='Es android', WinUI='En Windows'}" />
+            <!--It seems this code of having a single property that is shared accross platforms is not working in Core 9.-->
+            <!--<Label Text="{local:GeoLocationDeviceName}" FontSize="{StaticResource LabelSize}"/>-->
             <Image
                 Source="dotnet_bot.png"
                 HeightRequest="185"
