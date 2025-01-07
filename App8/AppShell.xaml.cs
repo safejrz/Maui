@@ -1,4 +1,4 @@
-﻿namespace App8
+﻿namespace App
 {
     public partial class AppShell : Shell
     {

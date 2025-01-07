@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace App8
+namespace App
 {
     public static class MauiProgram
     {
@@ -13,7 +13,9 @@ namespace App8
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                })
+                .Services.AddSingleton<IYOLO, YOLO>();
+                ;
 
 #if DEBUG
     		builder.Logging.AddDebug();
@@ -23,3 +25,6 @@ namespace App8
         }
     }
 }
+
+public interface IYOLO {    }
+public class YOLO : IYOLO { }
