@@ -36,7 +36,7 @@
         </StackLayout>-->
 
     <!--Flexlayout-->
-    <FlexLayout Direction="Column" JustifyContent="SpaceBetween" AlignContent="Center">
+    <!--<FlexLayout Direction="Column" JustifyContent="SpaceBetween" AlignContent="Center">
         <Label Text="Nombre:" FlexLayout.Basis="10%" />
         <Label Text="Apellido:" />
 
@@ -50,5 +50,16 @@
 
         <Button Text="Guardar" />
         <Button Text="Ver" />
-    </FlexLayout>
+    </FlexLayout>-->
+    
+    <!--AbsoluteLayout-->
+    <AbsoluteLayout>
+        <Button Text="Yolo" AbsoluteLayout.LayoutBounds="4, 4, 100, 50"/>
+        <Button Text="McSwagger" AbsoluteLayout.LayoutBounds="105, 4, 100, 50"/>
+        <Label Text="yolomcswagger.com" AbsoluteLayout.LayoutBounds="4, 60, 150, 50"/>
+
+        <Rectangle Background="Black" AbsoluteLayout.LayoutBounds="40, 125, 5, 100"/>
+        <Rectangle Background="Black" AbsoluteLayout.LayoutBounds="35, 215, 100, 5"/>
+    </AbsoluteLayout>
+    
 </ContentPage>
