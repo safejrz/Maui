@@ -3,7 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.MainPage">
 
-    <StackLayout Orientation="Vertical">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Category" />
+        <Label Grid.Row="0" Grid.Column="1" Text="Client" />
+        <Label Grid.Row="1" Grid.Column="0" Text="Product" />
+        <Button Text="Guardar"  Grid.Row="1" Grid.Column="1" ></Button>
+
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Vertical">
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="30">
             <Label x:Name="Category" />
             <Label x:Name="Client" />
@@ -12,5 +30,7 @@
 
         <Label Text="Mi App" />
     </StackLayout>
+
+    </Grid>
 
 </ContentPage>
