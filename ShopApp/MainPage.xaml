@@ -3,75 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.MainPage">
 
-    <!--Grid layout-->
-    <!--<Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="2*" />
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <Label Grid.Row="0" Grid.Column="0" Text="Category" />
-        <Label Grid.Row="0" Grid.Column="1" Text="Client" />
-        <Label Grid.Row="1" Grid.Column="0" Text="Product" />
-        <Button Text="Guardar"  Grid.Row="1" Grid.Column="1" ></Button>
-    </Grid>-->
-
-    <!--StackLayout-->
-
-    <!--<StackLayout Orientation="Vertical">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="30">
-                <Label x:Name="Category" />
-                <Label x:Name="Client" />
-                <Label x:Name="Product" />
-            </StackLayout>
-
-            <Label Text="Mi App" />
-        </StackLayout>-->
-
-    <!--Flexlayout-->
-    <!--<FlexLayout Direction="Column" JustifyContent="SpaceBetween" AlignContent="Center">
-        <Label Text="Nombre:" FlexLayout.Basis="10%" />
-        <Label Text="Apellido:" />
-
-        <Label Text="Productos:" />
-        <Border Stroke="Gray" FlexLayout.Grow="1">
-            <CollectionView>
-                
-            </CollectionView>
-    
-        </Border>
-
-        <Button Text="Guardar" />
-        <Button Text="Ver" />
-    </FlexLayout>-->
-    
-    <!--AbsoluteLayout-->
-    <!--<AbsoluteLayout>
-        <Button Text="Yolo" AbsoluteLayout.LayoutBounds="4, 4, 100, 50"/>
-        <Button Text="McSwagger" AbsoluteLayout.LayoutBounds="105, 4, 100, 50"/>
-        <Label Text="yolomcswagger.com" AbsoluteLayout.LayoutBounds="4, 60, 150, 50"/>
-
-        <Rectangle Background="Black" AbsoluteLayout.LayoutBounds="40, 125, 5, 100"/>
-        <Rectangle Background="Black" AbsoluteLayout.LayoutBounds="35, 215, 100, 5"/>
-    </AbsoluteLayout>-->
-    
-    <!--Grid layout simplificado-->
-    <Grid ColumnDefinitions="*, *, *" RowDefinitions="*,*" Style="{StaticResource MyGridx}">
-        <Grid.GestureRecognizers>
-            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-        </Grid.GestureRecognizers>
-        
-        <Label FontSize="30" x:Name="Category" Grid.Column="0" />
-        <Label FontSize="30" x:Name="Client" Grid.Column="1"/>
-        <Label FontSize="30" x:Name="Product" Grid.Column="1" Grid.Row="1"/>
-        <Button Text="ClickMe" Grid.Column="2" Grid.Row="1"></Button>
-    </Grid>
+    <VerticalStackLayout>
+        <Button Text="Boton" />
+        <DatePicker />
+        <Editor Placeholder="Esto es un editor" HeightRequest="200" />
+        <Entry Placeholder="Esto es una caja de texto o entry" />
+        <Picker>
+            <Picker.Items>
+                <x:String>Vaxi</x:String>
+                <x:String>Drez</x:String>
+                <x:String>Nestor Arcila</x:String>
+            </Picker.Items> 
+        </Picker>
+        <Stepper Minimum="0" Maximum="10" Increment="1" />
+        <Switch IsToggled="False" />
+        <Slider Minimum="1" Maximum="11" />
+        <TimePicker />
+    </VerticalStackLayout>
 
 </ContentPage>
