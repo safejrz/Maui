@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.MainPage">
 
-    <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-        <Label x:Name="Category" />
-        <Label x:Name="Client" />
-        <Label x:Name="Product" />
-    </VerticalStackLayout>
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="30">
+            <Label x:Name="Category" />
+            <Label x:Name="Client" />
+            <Label x:Name="Product" />
+        </StackLayout>
+
+        <Label Text="Mi App" />
+    </StackLayout>
 
 </ContentPage>
