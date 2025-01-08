@@ -53,13 +53,20 @@
     </FlexLayout>-->
     
     <!--AbsoluteLayout-->
-    <AbsoluteLayout>
+    <!--<AbsoluteLayout>
         <Button Text="Yolo" AbsoluteLayout.LayoutBounds="4, 4, 100, 50"/>
         <Button Text="McSwagger" AbsoluteLayout.LayoutBounds="105, 4, 100, 50"/>
         <Label Text="yolomcswagger.com" AbsoluteLayout.LayoutBounds="4, 60, 150, 50"/>
 
         <Rectangle Background="Black" AbsoluteLayout.LayoutBounds="40, 125, 5, 100"/>
         <Rectangle Background="Black" AbsoluteLayout.LayoutBounds="35, 215, 100, 5"/>
-    </AbsoluteLayout>
-    
+    </AbsoluteLayout>-->
+
+    <!--Grid layout simplificado-->
+    <Grid ColumnDefinitions="Auto, Auto" RowDefinitions="*,*">
+        <Label FontSize="30" x:Name="Category" Grid.Column="0" />
+        <Label FontSize="30" x:Name="Client" Grid.Column="1"/>
+        <Label FontSize="30" x:Name="Product" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
+
 </ContentPage>
