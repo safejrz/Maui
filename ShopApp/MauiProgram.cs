@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ShopApp.DataAccess;
 
 namespace ShopApp
 {
@@ -15,8 +16,12 @@ namespace ShopApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            var dbContext = new ShopDbContext();
+            dbContext.Database.EnsureCreated();
+            dbContext.Dispose();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
