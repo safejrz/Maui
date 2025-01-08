@@ -14,6 +14,10 @@ namespace ShopApp
             Product.Text = dbContext.Products.Count().ToString();
         }
 
+        private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+        {
+            await DisplayAlert("Hi", "Yes. the grid was tapped", "Ok", "Cancel");
+        }
     }
 
 }

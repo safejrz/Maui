@@ -64,6 +64,10 @@
     
     <!--Grid layout simplificado-->
     <Grid ColumnDefinitions="*, *, *" RowDefinitions="*,*" Style="{StaticResource MyGridx}">
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+        </Grid.GestureRecognizers>
+        
         <Label FontSize="30" x:Name="Category" Grid.Column="0" />
         <Label FontSize="30" x:Name="Client" Grid.Column="1"/>
         <Label FontSize="30" x:Name="Product" Grid.Column="1" Grid.Row="1"/>
