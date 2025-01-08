@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.MainPage">
 
-    <Grid>
+    <!--Grid layout-->
+    <!--<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -20,17 +21,34 @@
         <Label Grid.Row="0" Grid.Column="1" Text="Client" />
         <Label Grid.Row="1" Grid.Column="0" Text="Product" />
         <Button Text="Guardar"  Grid.Row="1" Grid.Column="1" ></Button>
+    </Grid>-->
 
-        <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Vertical">
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="30">
-            <Label x:Name="Category" />
-            <Label x:Name="Client" />
-            <Label x:Name="Product" />
-        </StackLayout>
+    <!--StackLayout-->
 
-        <Label Text="Mi App" />
-    </StackLayout>
+    <!--<StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="30">
+                <Label x:Name="Category" />
+                <Label x:Name="Client" />
+                <Label x:Name="Product" />
+            </StackLayout>
 
-    </Grid>
+            <Label Text="Mi App" />
+        </StackLayout>-->
 
+    <!--Flexlayout-->
+    <FlexLayout Direction="Column" JustifyContent="SpaceBetween" AlignContent="Center">
+        <Label Text="Nombre:" FlexLayout.Basis="10%" />
+        <Label Text="Apellido:" />
+
+        <Label Text="Productos:" />
+        <Border Stroke="Gray" FlexLayout.Grow="1">
+            <CollectionView>
+                
+            </CollectionView>
+    
+        </Border>
+
+        <Button Text="Guardar" />
+        <Button Text="Ver" />
+    </FlexLayout>
 </ContentPage>
