@@ -61,12 +61,13 @@
         <Rectangle Background="Black" AbsoluteLayout.LayoutBounds="40, 125, 5, 100"/>
         <Rectangle Background="Black" AbsoluteLayout.LayoutBounds="35, 215, 100, 5"/>
     </AbsoluteLayout>-->
-
+    
     <!--Grid layout simplificado-->
-    <Grid ColumnDefinitions="Auto, Auto" RowDefinitions="*,*">
+    <Grid ColumnDefinitions="*, *, *" RowDefinitions="*,*" Style="{StaticResource MyGridx}">
         <Label FontSize="30" x:Name="Category" Grid.Column="0" />
         <Label FontSize="30" x:Name="Client" Grid.Column="1"/>
         <Label FontSize="30" x:Name="Product" Grid.Column="1" Grid.Row="1"/>
+        <Button Text="ClickMe" Grid.Column="2" Grid.Row="1"></Button>
     </Grid>
 
 </ContentPage>
