@@ -16,7 +16,7 @@
             <Style TargetType="Button">
                 <Setter Property="Background">
                     <Setter.Value>
-                        <SolidColorBrush Color="LightBlue" />
+                        <SolidColorBrush Color="DodgerBlue" />
                     </Setter.Value>
                 </Setter>
             </Style>

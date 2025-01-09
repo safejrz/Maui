@@ -3,5 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.Views.ProductDetailPage"
              Title="ProductDetailPage">
+
     <VerticalStackLayout x:Name="container" />
+    
 </ContentPage>
