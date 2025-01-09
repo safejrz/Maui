@@ -4,7 +4,19 @@
              x:Class="ShopApp.MainPage">
 
     <VerticalStackLayout>
-        <Button Text="Boton" />
+        <Ellipse WidthRequest="200" HeightRequest="200" >
+            <Ellipse.Fill>
+                <SolidColorBrush Color="Orange"/>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <Rectangle WidthRequest="100" HeightRequest="80" Fill="Blue" >
+            <Rectangle.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Rectangle.GestureRecognizers>
+        </Rectangle>
+        
+        <!--<Button Text="Boton" />
         <DatePicker />
         <Editor Placeholder="Esto es un editor" HeightRequest="200" />
         <Entry Placeholder="Esto es una caja de texto o entry" />
@@ -18,7 +30,9 @@
         <Stepper Minimum="0" Maximum="10" Increment="1" />
         <Switch IsToggled="False" />
         <Slider Minimum="1" Maximum="11" />
-        <TimePicker />
+        <TimePicker />-->
+        
+        
     </VerticalStackLayout>
 
 </ContentPage>
