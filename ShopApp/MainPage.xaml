@@ -3,36 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.MainPage">
 
-    <VerticalStackLayout>
-        <Ellipse WidthRequest="200" HeightRequest="200" >
-            <Ellipse.Fill>
-                <SolidColorBrush Color="Orange"/>
-            </Ellipse.Fill>
-        </Ellipse>
+    <Grid Grid.ColumnDefinitions="Auto, Auto" Grid.RowDefinitions="Auto, Auto, Auto" VerticalOptions="Center" HorizontalOptions="Center" >
+        <Ellipse 
+            WidthRequest="50"
+            HeightRequest="50"
+            Fill="{AppThemeBinding Light='LightSteelBlue', Dark='DarkBlue'}"
+            Margin="4" />
+        <Label x:Name="Category"
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Center"
+               FontSize="30" />
+        <Label Text="Categorias"
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               Grid.Column="1"/>
 
-        <Rectangle WidthRequest="100" HeightRequest="80" Fill="Blue" >
-            <Rectangle.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-            </Rectangle.GestureRecognizers>
-        </Rectangle>
-        
-        <!--<Button Text="Boton" />
-        <DatePicker />
-        <Editor Placeholder="Esto es un editor" HeightRequest="200" />
-        <Entry Placeholder="Esto es una caja de texto o entry" />
-        <Picker>
-            <Picker.Items>
-                <x:String>Vaxi</x:String>
-                <x:String>Drez</x:String>
-                <x:String>Nestor Arcila</x:String>
-            </Picker.Items> 
-        </Picker>
-        <Stepper Minimum="0" Maximum="10" Increment="1" />
-        <Switch IsToggled="False" />
-        <Slider Minimum="1" Maximum="11" />
-        <TimePicker />-->
-        
-        
-    </VerticalStackLayout>
+        <Ellipse 
+            WidthRequest="50"
+            HeightRequest="50"
+            Fill="{AppThemeBinding Light='LightSteelBlue', Dark='DarkBlue'}"
+            Margin="4"
+            Grid.Row="1"
+            />
+        <Label x:Name="Product"
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            FontSize="30"
+            Grid.Row="1" />
+        <Label Text="Productos"
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            FontSize="30"
+            Grid.Row="1"
+            Grid.Column="1"/>
+        <Ellipse 
+            WidthRequest="50"
+            HeightRequest="50"
+            Fill="{AppThemeBinding Light='LightSteelBlue', Dark='DarkBlue'}"
+            Margin="4"
+            Grid.Row="2"
+            />
+        <Label x:Name="Client"
+           VerticalTextAlignment="Center" 
+           HorizontalTextAlignment="Center"
+           FontSize="30"
+           Grid.Row="2" />
+        <Label Text="Clientes"
+           VerticalTextAlignment="Center" 
+           HorizontalTextAlignment="Center"
+           FontSize="30"
+           Grid.Row="2"
+           Grid.Column="1"/>
 
+    </Grid>
 </ContentPage>
