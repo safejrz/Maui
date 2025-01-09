@@ -7,10 +7,31 @@
     Shell.FlyoutBehavior="Flyout"
     Title="ShopApp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate views:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Configuracion">
+        <Tab Title="Resumen">
+            <ShellContent Title="Data System"
+            ContentTemplate="{DataTemplate views:MainPage}"
+            Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Products">
+            <ShellContent Title="Productos"
+            ContentTemplate="{DataTemplate views:ProductsPage}"
+            Route="ProductsPage" />
+        </Tab>
+
+        <Tab Title="Categories">
+            <ShellContent Title="Categorias"
+            ContentTemplate="{DataTemplate views:CategoriesPage}"
+            Route="CategoriesPage" />
+        </Tab>
+
+        <Tab Title="Clients">
+            <ShellContent Title="Clientes"
+            ContentTemplate="{DataTemplate views:ClientsPage}"
+            Route="ClientsPage" />
+        </Tab>
+    </FlyoutItem>
 
     <ShellContent
         Title="Acerca de mi tienda"
