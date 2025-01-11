@@ -18,7 +18,7 @@
             <Label Text="{x:Static info:AppInfo.VersionString}"/>
         </VerticalStackLayout>
     </Shell.FlyoutFooter>
-    
+
     <FlyoutItem Title="Configuracion">
         <Tab Title="Resumen">
             <ShellContent Title="Data System"
@@ -46,9 +46,14 @@
     </FlyoutItem>
 
     <ShellContent
-        Title="Acerca de mi tienda"
-        ContentTemplate="{DataTemplate views:AboutPage}"
-        Route="AboutPage" />
+        Title="Help Support"
+        ContentTemplate="{DataTemplate views:HelpSupportPage}"
+        Route="HelpSupportPage" />
+
+    <ShellContent
+    Title="Acerca de mi tienda"
+    ContentTemplate="{DataTemplate views:AboutPage}"
+    Route="AboutPage" />
 
     <MenuItem
         Text="Abrir pagina"
