@@ -14,6 +14,9 @@
             />
     </Shell.SearchHandler>
 
-    <VerticalStackLayout x:Name="container"/>
-    
+    <CollectionView
+        x:Name="Products"
+        SelectionMode="Single"
+        ItemTemplate="{StaticResource ProductDataTemplate}"
+        />
 </ContentPage>
