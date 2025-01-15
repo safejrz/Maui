@@ -19,7 +19,7 @@ internal class ShopDbContext : DbContext
             new Category(1, "Electronics"),
             new Category(2, "Computers"),
             new Category(3, "Mobile"),
-            new Category(4, "Desktop"),
+            new Category(4, "Desktop"), 
             new Category(5, "Audio"),
             new Category(6, "Home devices"),
             new Category(7, "Toys and games")
