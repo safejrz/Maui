@@ -8,6 +8,8 @@ internal class ShopDbContext : DbContext
     public DbSet<Product> Products { get; set; }
     public DbSet<Client> Clients { get; set; }
 
+    //public DbSet<ShopCart> ShopCarts { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseInMemoryDatabase("ShopComputer");
@@ -48,3 +50,5 @@ public record Product(int Id, string Name, string Description, decimal Price, in
 }
 
 public record Client(int Id, string Name, string Address);
+
+public record ShopCart(int ClientId, int ProductId, int Quantity);
