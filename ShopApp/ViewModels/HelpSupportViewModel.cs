@@ -1,4 +1,5 @@
-﻿using ShopApp.DataAccess;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using ShopApp.DataAccess;
 using ShopApp.Services;
 using ShopApp.Views;
 using System.Collections.ObjectModel;
@@ -6,8 +7,17 @@ using System.ComponentModel;
 
 namespace ShopApp.ViewModels;
 
-public class HelpSupportViewModel : BindingUtilityObject
+public partial class HelpSupportViewModel : ObservableObject
 {
+    [ObservableProperty]
+    private int visitasPendientes;
+
+    [ObservableProperty]
+    private ObservableCollection<Client> clients;
+
+    [ObservableProperty]
+    private Client selectedClient;
+
     private readonly INavigationService _navigationService;
     public HelpSupportViewModel(INavigationService navigationService)
     {
@@ -25,54 +35,4 @@ public class HelpSupportViewModel : BindingUtilityObject
             await _navigationService.GoToAsync(uri);
         }
     }
-
-    private int _visitasPendientes;
-
-    public int VisitasPendientes
-    {
-        get
-        {
-            return _visitasPendientes;
-        }
-        set
-        {
-            if (_visitasPendientes != value)
-            {
-                _visitasPendientes = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
-
-    private ObservableCollection<Client> _client;
-
-    public ObservableCollection<Client> Clients
-    {
-        get
-        {
-            return _client;
-        }
-        set
-        {
-            if (_client != value)
-            {
-                _client = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
-
-    private Client _selectedClient;
-
-    public Client SelectedClient
-    {
-        get { return _selectedClient; }
-        set
-        {
-            if (_selectedClient != value)
-                _selectedClient = value;
-            RaisePropertyChanged();
-        }
-    }
-
 }

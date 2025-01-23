@@ -19,16 +19,18 @@ namespace ShopApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            var dbContext = new ShopDbContext();
-            dbContext.Database.EnsureCreated();
-            dbContext.Dispose();
-
             Routing.RegisterRoute(nameof(ProductDetailPage), typeof(ProductDetailPage));
             Routing.RegisterRoute(nameof(HelpSupportDetailPage), typeof(HelpSupportDetailPage));
 
             builder.Services.AddSingleton<INavigationService,  NavigationService>();
             builder.Services.AddTransient<HelpSupportViewModel>();
             builder.Services.AddTransient<HelpSupportPage>();
+            builder.Services.AddTransient<HelpSupportDetailViewModel>();
+            builder.Services.AddTransient<HelpSupportDetailPage>();
+
+            var dbContext = new ShopDbContext();
+            dbContext.Database.EnsureCreated();
+            dbContext.Dispose();
 
 #if DEBUG
             builder.Logging.AddDebug();

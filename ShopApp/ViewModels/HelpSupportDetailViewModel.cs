@@ -1,18 +1,34 @@
-﻿using ShopApp.DataAccess;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using ShopApp.DataAccess;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace ShopApp.ViewModels;
 
-public class HelpSupportDetailViewModel : BindingUtilityObject
+public partial class HelpSupportDetailViewModel : ObservableObject, IQueryAttributable
 {
+    [ObservableProperty]
+    private ObservableCollection<ShopCart> _compras = new ObservableCollection<ShopCart>();
+
+    [ObservableProperty]
+    private int clientId;
+
+    [ObservableProperty]
+    private ObservableCollection<Product> products;
+
+    [ObservableProperty]
+    private Product selectedProduct;
+
+    [ObservableProperty]
+    private int quantity;
+
     public HelpSupportDetailViewModel()
     {
         var database = new ShopDbContext();
         Products = new ObservableCollection<Product>(database.Products);
         AddCommand = new Command(() =>
         {
-            var compra = new ShopCart(ClientID, SelectedProduct.Id, Quantity);
+            var compra = new ShopCart(ClientId, SelectedProduct.Id, Quantity);
             Compras.Add(compra);
         },
         () => true
@@ -21,72 +37,9 @@ public class HelpSupportDetailViewModel : BindingUtilityObject
 
     public ICommand AddCommand { get; set; }
 
-    private ObservableCollection<ShopCart> _compras = new ObservableCollection<ShopCart>();
-
-    public ObservableCollection<ShopCart> Compras
+    public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        get { return _compras; }
-        set
-        {
-            if (Compras != value)
-            {
-                _compras = value;
-                RaisePropertyChanged();
-            }
-        }
+        var clientId = int.Parse(query["id"].ToString());
+        ClientId = clientId;
     }
-
-    private int _clientId;
-
-    public int ClientID
-    {
-        get { return _clientId; }
-        set { _clientId = value; }
-    }
-
-    private ObservableCollection<Product> _products;
-
-    public ObservableCollection<Product> Products
-    {
-        get { return _products; }
-        set
-        {
-            if (_products != value)
-            {
-                _products = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
-
-    private Product _selectedProduct;
-
-    public Product SelectedProduct
-    {
-        get { return _selectedProduct; }
-        set
-        {
-            if (_selectedProduct != value)
-            {
-                _selectedProduct = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
-
-    private int _quantity;
-
-    public int Quantity
-    {
-        get { return _quantity; }
-        set
-        {
-            if (_quantity != value)
-            {
-                _quantity = value;
-                RaisePropertyChanged();
-            }
-        }
-    }
-
 }
