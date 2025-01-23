@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using ShopApp.DataAccess;
+using ShopApp.Services;
+using ShopApp.ViewModels;
 using ShopApp.Views;
 
 namespace ShopApp
@@ -23,6 +25,10 @@ namespace ShopApp
 
             Routing.RegisterRoute(nameof(ProductDetailPage), typeof(ProductDetailPage));
             Routing.RegisterRoute(nameof(HelpSupportDetailPage), typeof(HelpSupportDetailPage));
+
+            builder.Services.AddSingleton<INavigationService,  NavigationService>();
+            builder.Services.AddTransient<HelpSupportViewModel>();
+            builder.Services.AddTransient<HelpSupportPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
