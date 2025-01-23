@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace ShopApp.ViewModels;
 
-public partial class HelpSupportDetailViewModel : ObservableObject, IQueryAttributable
+public partial class HelpSupportDetailViewModel : ViewModelGlobal, IQueryAttributable
 {
     [ObservableProperty]
     private ObservableCollection<ShopCart> _compras = new ObservableCollection<ShopCart>();

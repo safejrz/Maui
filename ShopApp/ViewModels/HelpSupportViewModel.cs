@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace ShopApp.ViewModels;
 
-public partial class HelpSupportViewModel : ObservableObject
+public partial class HelpSupportViewModel : ViewModelGlobal
 {
     [ObservableProperty]
     private int visitasPendientes;
