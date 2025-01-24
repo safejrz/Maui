@@ -1,15 +1,14 @@
 using ShopApp.DataAccess;
+using ShopApp.ViewModels;
 using System.ComponentModel;
 
 namespace ShopApp.Views;
 
 public partial class ProductsPage : ContentPage
 {
-	public ProductsPage()
-	{
-		InitializeComponent();
-
-        var dbContext = new ShopDbContext();
-        Products.ItemsSource = dbContext.Products;
+    public ProductsPage(ProductViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
     }
 }

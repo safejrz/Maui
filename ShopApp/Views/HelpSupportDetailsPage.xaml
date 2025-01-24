@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShopApp.Views.HelpSupportDetailPage"
+             x:Class="ShopApp.Views.HelpSupportDetailsPage"
              xmlns:vm="clr-namespace:ShopApp.ViewModels"
-             Title="HelpSupportDetailPage">
+             Title="HelpSupportDetailsPage">
 
     <ContentPage.BindingContext>
-        <vm:HelpSupportDetailViewModel />
+        <vm:HelpSupportDetailsViewModel />
     </ContentPage.BindingContext>
 
     <Grid RowDefinitions="*,Auto,*">

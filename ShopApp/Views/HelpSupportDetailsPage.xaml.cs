@@ -2,9 +2,9 @@ using ShopApp.ViewModels;
 
 namespace ShopApp.Views;
 
-public partial class HelpSupportDetailPage : ContentPage
+public partial class HelpSupportDetailsPage : ContentPage
 {
-    public HelpSupportDetailPage(HelpSupportDetailViewModel helpSupportDetailViewModel)
+    public HelpSupportDetailsPage(HelpSupportDetailsViewModel helpSupportDetailViewModel)
     {
         InitializeComponent();
         BindingContext = helpSupportDetailViewModel;

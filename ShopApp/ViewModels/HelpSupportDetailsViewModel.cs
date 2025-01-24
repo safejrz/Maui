@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace ShopApp.ViewModels;
 
-public partial class HelpSupportDetailViewModel : ViewModelGlobal, IQueryAttributable
+public partial class HelpSupportDetailsViewModel : ViewModelGlobal, IQueryAttributable
 {
     [ObservableProperty]
     private ObservableCollection<ShopCart> _compras = new ObservableCollection<ShopCart>();
@@ -22,7 +22,7 @@ public partial class HelpSupportDetailViewModel : ViewModelGlobal, IQueryAttribu
     [ObservableProperty]
     private int quantity;
 
-    public HelpSupportDetailViewModel()
+    public HelpSupportDetailsViewModel()
     {
         var database = new ShopDbContext();
         Products = new ObservableCollection<Product>(database.Products);

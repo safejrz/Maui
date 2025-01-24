@@ -31,7 +31,7 @@ public partial class HelpSupportViewModel : ViewModelGlobal
     {
         if (e.PropertyName == nameof(SelectedClient))
         {
-            var uri = $"{nameof(HelpSupportDetailPage)}?id={SelectedClient.Id}"; 
+            var uri = $"{nameof(HelpSupportDetailsPage)}?id={SelectedClient.Id}"; 
             await _navigationService.GoToAsync(uri);
         }
     }

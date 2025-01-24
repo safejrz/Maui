@@ -17,6 +17,8 @@
     <CollectionView
         x:Name="Products"
         SelectionMode="Single"
+        ItemsSource="{Binding Products}"
+        SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
         ItemTemplate="{StaticResource ProductDataTemplate}"
         />
 </ContentPage>

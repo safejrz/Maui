@@ -74,13 +74,13 @@
 	  <MauiXaml Update="Views\ClientsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\HelpSupportDetailPage.xaml">
+	  <MauiXaml Update="Views\HelpSupportDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HelpSupportPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ProductDetailPage.xaml">
+	  <MauiXaml Update="Views\ProductDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ProductsPage.xaml">
@@ -90,6 +90,15 @@
 
 	<ItemGroup>
 	  <Folder Include="NewFolder\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\HelpSupportDetailsPage.xaml.cs">
+	    <DependentUpon>HelpSupportDetailsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ProductDetailsPage.xaml.cs">
+	    <DependentUpon>ProductDetailsPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

@@ -27,6 +27,6 @@ public class ProductSearchHandler : SearchHandler
 
     protected async override void OnItemSelected(object item)
     {
-        await Shell.Current.GoToAsync($"{nameof(ProductDetailPage)}?id={((Product)item).Id}");
+        await Shell.Current.GoToAsync($"{nameof(ProductDetailsPage)}?id={((Product)item).Id}");
     }
 }
