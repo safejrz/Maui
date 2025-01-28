@@ -51,4 +51,4 @@ public record Product(int Id, string Name, string Description, decimal Price, in
 
 public record Client(int Id, string Name, string Address);
 
-public record ShopCart(int ClientId, int ProductId, int Quantity);
+public record ShopCart(int ClientId, int ProductId, int Quantity, string ProductName, decimal ProductPrice, decimal Total);
