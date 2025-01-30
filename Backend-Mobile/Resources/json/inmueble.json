@@ -1,0 +1,112 @@
+[
+    {
+        "nombre": "Casa Familiar",
+        "detalle": "Patio delantero decorado tipo terraza, para recepcionar a los huespedes o como zona de área social. Cuenta con 4 dormitorios amplios (espacios para más de 1 cama) y baño independiente para cada dormitorio en buen estado.",
+        "direccion": "Av. Las Palmas 345",
+        "imagenUrl": "casa_1.jpg",
+        "precio":452300,
+        "isTrending": true,
+        "categoryId": 1,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Inmueble de Verano",
+        "detalle": "Pasando el jardín, hay una construcción donde se encuentra el cuarto y baño de servicio en el primer piso, y en el segundo piso hay dos ambientes, uno de ellos es un estudio de música o aprovecharlo para lo que se necesite.",
+        "direccion": "Av. La Costanera 980",
+        "imagenUrl": "casa_2.png",
+        "precio":700000,
+        "isTrending": true,
+        "categoryId": 1,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },	
+    {
+        "nombre": "Casa cerca a la playa",
+        "detalle": "La casa es de buen diseño e iluminación natural, escalera principal grande con jardín interior, hall de ingreso, sala de estar y comedor ideal para compartir en familia o amigos y con un amplio jardín posterior con zona de parrilla.",
+        "direccion": "Av. Los Jardines 312",
+        "imagenUrl": "casa_3.png",
+        "precio":850000,
+        "isTrending": false,
+        "categoryId": 1,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Castillo en la ciudad",
+        "detalle": "La casa aparte de ser elegante, es super linda, iluminada y acogedora, tiene muy buenos acabados en toda la casa, techos con doble altura, todos los espacios están bien distribuidos y son amplios",
+        "direccion": "Pasaje Las Begonias 100",
+        "imagenUrl": "casa_4.png",
+        "precio":120000,
+        "isTrending": false,
+        "categoryId": 1,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Casa frente al parque",
+        "detalle": "Amplio jardín en la parte frontal de la casa, pasos para llegar a la puerta de ingreso en mármol.",
+        "direccion": "Av. El Floral 781",
+        "imagenUrl": "casa_5.png",
+        "precio":135000,
+        "isTrending": false,
+        "categoryId": 1,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Departamento de Lujo",
+        "detalle": "Departamento con 3 cuartos, y con marmol en cocina",
+        "direccion": "Av. Las Luces 90, # 120",
+        "imagenUrl": "depa_1.jpg",
+        "precio":90000,
+        "isTrending": false,
+        "categoryId": 2,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Departamento centrico",
+        "detalle": "Departamento con 2 cuartos, y salida independiente",
+        "direccion": "Av. El Gran Chaparral 45, # 67",
+        "imagenUrl": "depa_2.jpg",
+        "precio":76000,
+        "isTrending": false,
+        "categoryId": 2,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Condominio con piscina",
+        "detalle": "Departamento con habitaciones de lujo",
+        "direccion": "Av. El Gran Conjunto 167",
+        "imagenUrl": "condo_1.jpg",
+        "precio":132000,
+        "isTrending": false,
+        "categoryId": 3,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Condominio familiar",
+        "detalle": "Departamentos grandes para ninos y familias",
+        "direccion": "Av. El Ballantyne 235",
+        "imagenUrl": "condo_2.jpg",
+        "precio":150000,
+        "isTrending": false,
+        "categoryId": 3,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Terreno grande cerca al rio",
+        "detalle": "Gran terreno listo para construir casas e inmuebles",
+        "direccion": "Av. El Gran Salto 321",
+        "imagenUrl": "terreno_1.jpg",
+        "precio":8000,
+        "isTrending": false,
+        "categoryId": 4,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    },
+    {
+        "nombre": "Terreno cerca a la ciudad",
+        "detalle": "Ubicado cerca a centros comerciales y centros nocturnos",
+        "direccion": "Av. La Noche 200",
+        "imagenUrl": "condo_2.jpg",
+        "precio":92000,
+        "isTrending": false,
+        "categoryId": 4,
+        "usuarioId": "9767447b-0ab7-41b7-bef7-9958dd66e44e"
+    }
+]

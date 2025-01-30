@@ -1,0 +1,18 @@
+[
+    {
+        "nombre": "Casas",
+        "imageUrl": "casa.png"
+    },
+    {
+        "nombre": "Departamentos",
+        "imageUrl": "departamento.png"
+    },
+    {
+        "nombre": "Condominio",
+        "imageUrl": "condominio.png"
+    },
+    {
+        "nombre": "Terreno",
+        "imageUrl": "terreno.png"
+    }
+]
