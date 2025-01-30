@@ -36,6 +36,8 @@ namespace ShopApp
             builder.Services.AddSingleton(Connectivity.Current);
             builder.Services.AddSingleton<HttpClient>();
             builder.Services.AddSingleton<CompraService>();
+            builder.Services.AddSingleton<IDatabaseRutaService, DatabaseRutaService>();
+            builder.Services.AddDbContext<ShopOutDbContext>();
 
             var dbContext = new ShopDbContext();
             dbContext.Database.EnsureCreated();
