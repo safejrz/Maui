@@ -5,9 +5,9 @@ using ShopApp.ViewModels;
 using ShopApp.Views;
 
 namespace ShopApp
-{
+{    
     public static class MauiProgram
-    {
+    {        
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
@@ -22,7 +22,7 @@ namespace ShopApp
             Routing.RegisterRoute(nameof(ProductDetailsPage), typeof(ProductDetailsPage));
             Routing.RegisterRoute(nameof(HelpSupportDetailsPage), typeof(HelpSupportDetailsPage));
 
-            builder.Services.AddSingleton<INavigationService,  NavigationService>();
+            builder.Services.AddSingleton<INavigationService, NavigationService>();
             builder.Services.AddTransient<HelpSupportViewModel>();
             builder.Services.AddTransient<HelpSupportPage>();
             builder.Services.AddTransient<HelpSupportDetailsViewModel>();
@@ -33,6 +33,9 @@ namespace ShopApp
             builder.Services.AddTransient<ProductsPage>();
             builder.Services.AddTransient<ProductDetailsViewModel>();
             builder.Services.AddTransient<ProductDetailsPage>();
+            builder.Services.AddSingleton(Connectivity.Current);
+            builder.Services.AddSingleton<HttpClient>();
+            builder.Services.AddSingleton<CompraService>();
 
             var dbContext = new ShopDbContext();
             dbContext.Database.EnsureCreated();
