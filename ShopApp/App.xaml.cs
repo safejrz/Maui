@@ -1,12 +1,16 @@
-﻿namespace ShopApp
+﻿using ShopApp.DataAccess;
+using ShopApp.Views;
+
+namespace ShopApp
 {
     public partial class App : Application
     {
-        public App()
+        public App(LoginPage loginPage, ShopOutDbContext context)
         {
             InitializeComponent();
-
-            MainPage = new AppShell();
+            context.Database.EnsureCreated();
+            var accessToken = Preferences.Get("accessToken", string.Empty);            
+            MainPage = string.IsNullOrEmpty(accessToken) ? loginPage : new AppShell();
         }
     }
 }
