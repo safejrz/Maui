@@ -19,10 +19,6 @@
         </VerticalStackLayout>
     </Shell.FlyoutFooter>
 
-    <ShellContent
-        Title="Resumen de Ventas"
-        ContentTemplate="{DataTemplate views:ResumenPage}"
-        Route="ResumenPage" />
     <FlyoutItem Title="Configuracion">
         <Tab Title="Resumen">
             <ShellContent Title="Data System"

@@ -33,11 +33,13 @@ namespace ShopApp
             builder.Services.AddTransient<ProductsPage>();
             builder.Services.AddTransient<ProductDetailsViewModel>();
             builder.Services.AddTransient<ProductDetailsPage>();
+            builder.Services.AddTransient<ResumenViewModel>();
+            builder.Services.AddTransient<ResumenPage>();
             builder.Services.AddSingleton(Connectivity.Current);
             builder.Services.AddSingleton<HttpClient>();
             builder.Services.AddSingleton<CompraService>();
             builder.Services.AddSingleton<IDatabaseRutaService, DatabaseRutaService>();
-            builder.Services.AddDbContext<ShopOutDbContext>();
+            builder.Services.AddDbContext<ShopOutDbContext>();            
 
             var dbContext = new ShopDbContext();
             dbContext.Database.EnsureCreated();
