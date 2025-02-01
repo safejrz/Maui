@@ -27,13 +27,14 @@ public partial class LoginViewModel : ViewModelGlobal
     [RelayCommand(CanExecute = nameof(StatusConnection))]
     private async Task LoginMethod()
     {
-        var resultado = await _securityService.Login(email, password);
+        var resultado = await _securityService.Login(Email, Password);
         if (resultado)
         {
             Application.Current.MainPage = new AppShell();
         }
         else
         {
+            //Application.Current.MainPage = new AppShell();
             Shell.Current.DisplayAlert("Error", "Usuario o contraseña incorrectos", "Aceptar");
         }
     }

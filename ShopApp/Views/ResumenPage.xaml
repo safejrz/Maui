@@ -18,7 +18,6 @@
         <VerticalStackLayout Grid.ColumnSpan="2" BackgroundColor="{StaticResource Quaternary}" Padding="10">
             <Label Text="{Binding Total, StringFormat='{0:C}'}"/>
             <Label Text="Ventas Totales" FontSize="Subtitle" />
-
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Row="1" Background="{StaticResource Primary}" Padding="10">
             <HorizontalStackLayout>
@@ -33,13 +32,7 @@
                 Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource Secondary}" Padding="10">
                 <Label Text="{Binding TotalProductos}" />
                 <Label Text="Productos Vendidos"  FontSize="Subtitle" />
-
-
             </VerticalStackLayout>
-
         </VerticalStackLayout>
-
     </Grid>
-
-
 </ContentPage>

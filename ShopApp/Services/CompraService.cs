@@ -1,4 +1,6 @@
-﻿using ShopApp.DataAccess;
+﻿using Microsoft.Extensions.Configuration;
+using ShopApp.DataAccess;
+using ShopApp.Models.Config;
 using System.Net.Http.Json;
 
 namespace ShopApp.Services;
@@ -6,15 +8,18 @@ namespace ShopApp.Services;
 public class CompraService
 {
     private HttpClient _client = new HttpClient();
+    private Settings _settings;
 
-    public CompraService(HttpClient client)
+    public CompraService(HttpClient client, IConfiguration configuration)
     {
         _client = client;
+        _settings = configuration.GetSection(nameof(Settings)).Get<Settings>();   
     }
 
     public async Task<bool> EnviarData(IEnumerable<ShopCart> compras)
     {
-        var uri = $"http://172.19.160.1/api/compra";
+        var uri = $"{_settings.UrlBase}api/compra";
+
 
         var body = new
         {
