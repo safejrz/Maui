@@ -6,7 +6,7 @@ using NetKubernetes.Dtos.UsuarioDtos;
 namespace NetKubernetes.Controllers;
 
 [Route("api/[controller]")]
-[ApiController] 
+[ApiController]
 public class UsuarioController : ControllerBase {
 
     private readonly IUsuarioRepository _repository;

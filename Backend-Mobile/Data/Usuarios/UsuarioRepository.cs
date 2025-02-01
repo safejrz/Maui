@@ -1,10 +1,10 @@
+using System.Net;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NetKubernetes.Dtos.UsuarioDtos;
 using NetKubernetes.Middleware;
 using NetKubernetes.Models;
 using NetKubernetes.Token;
-using System.Net;
 
 namespace NetKubernetes.Data.Usuarios;
 
@@ -13,7 +13,7 @@ public class UsuarioRepository : IUsuarioRepository
     private readonly UserManager<Usuario> _userManager;
     private readonly SignInManager<Usuario> _signInManager;
 
-    private readonly IJwtGenerador _jwtGenerador; 
+    private readonly IJwtGenerador _jwtGenerador;
 
     private readonly AppDbContext _contexto;
 

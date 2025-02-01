@@ -219,8 +219,14 @@ namespace NetKubernetes.Migrations
                     b.Property<DateTime?>("FechaCreacion")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Imagen")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ImagenUrl")
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsBookmarkEnabled")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("IsTrending")
                         .HasColumnType("INTEGER");

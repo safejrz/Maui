@@ -1,5 +1,5 @@
 using NetKubernetes.Dtos.BookmarkDtos;
-using NetKubernetes.Models; 
+using NetKubernetes.Models;
 
 namespace NetKubernetes.Data.Bookmarks;
 

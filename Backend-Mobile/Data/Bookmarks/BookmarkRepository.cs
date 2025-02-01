@@ -1,11 +1,14 @@
-using AutoMapper;
+using System.Resources;
+using System.Xml.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Net;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using NetKubernetes.Dtos.BookmarkDtos;
 using NetKubernetes.Middleware;
 using NetKubernetes.Models;
 using NetKubernetes.Token;
-using System.Net;
+using NetKubernetes.Dtos.BookmarkDtos;
+using AutoMapper;
 
 namespace NetKubernetes.Data.Bookmarks;
 
@@ -35,35 +38,32 @@ public class BookmarkRepository : IBookmarkRepository
 
     public async Task<BookmarkResponseDto> Create(BookmarkRequestDto request)
     {
-        // var usuario = await _userManager.FindByNameAsync(_usuarioSesion.ObtenerUsuarioSesion());
-        // if (usuario is null)
-        // {
-        //     throw new MiddlewareException(
-        //         HttpStatusCode.Unauthorized,
-        //         new { mensaje = "El usuario no es valido para hacer esta insercion" }
-        //     );
-        // }
-
         var bookmark = await _contexto.Bookmarks!
                            .FirstOrDefaultAsync(x => x.InmuebleId == request.InmuebleId && x.UsuarioId == request.UsuarioId);
 
 
+        var inmueble = await _contexto.Inmuebles!
+                        .FirstOrDefaultAsync(x => x.Id == request.InmuebleId);
+
+
         if (bookmark is not null)
         {
-            throw new MiddlewareException(
-                HttpStatusCode.Conflict,
-                new { mensaje = "El inmueble ya fue registrado con este usuario" }
-            );
+            _contexto.Bookmarks!.Remove(bookmark!);
+            inmueble!.IsBookmarkEnabled = false;
+        }
+        else
+        {
+            bookmark = new Bookmark
+            {
+                InmuebleId = request.InmuebleId,
+                UsuarioId = request.UsuarioId
+            };
+
+            _contexto.Bookmarks!.Add(bookmark);
+
+            inmueble!.IsBookmarkEnabled = true;
         }
 
-
-        bookmark = new Bookmark
-        {
-            InmuebleId = request.InmuebleId,
-            UsuarioId = request.UsuarioId
-        };
-
-        _contexto.Bookmarks!.Add(bookmark);
         await _contexto.SaveChangesAsync();
 
         return _mapper.Map<BookmarkResponseDto>(bookmark);

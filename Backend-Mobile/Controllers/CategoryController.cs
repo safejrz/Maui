@@ -1,7 +1,12 @@
+using System.Net;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using NetKubernetes.Data.Inmuebles;
 using NetKubernetes.Data.Categories;
 using NetKubernetes.Dtos.CategoryDtos;
+using NetKubernetes.Middleware;
+using NetKubernetes.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NetKubernetes.Controllers;
 
@@ -28,7 +33,7 @@ public class CategoryController : ControllerBase{
         return Ok(_mapper.Map<IEnumerable<CategoryResponseDto>>(categories));
     }
 
-
+    
 
 
 }

@@ -16,6 +16,7 @@ public class InmuebleResponseDto
     public decimal Precio { get; set; }
 
     public string? ImagenUrl { get; set; }
+    public string? Imagen { get; set; }
 
     public string? Picture { get; set; }
 
@@ -26,6 +27,12 @@ public class InmuebleResponseDto
     public int CategoryId { get; set; }
 
     public bool IsTrending { get; set; }
+
+    public bool IsBookmarkEnabled {get;set;}
+
+    public string? BookmarkUserId {get;set;}
+
+    public string Telefono {get;set;}  = "980-25541-2225";
 
     public ICollection<BookmarkResponseDto>? Bookmarks { get; set; }
 

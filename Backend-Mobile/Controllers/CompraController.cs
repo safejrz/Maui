@@ -1,8 +1,12 @@
+using System.Net;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NetKubernetes.Data.Bookmarks;
 using NetKubernetes.Data.Compras;
+using NetKubernetes.Dtos.BookmarkDtos;
 using NetKubernetes.Dtos.CompraDtos;
+using NetKubernetes.Middleware;
 using NetKubernetes.Models;
 
 namespace NetKubernetes.Controllers;

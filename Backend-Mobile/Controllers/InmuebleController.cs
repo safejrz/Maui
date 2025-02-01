@@ -1,10 +1,10 @@
+using System.Net;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using NetKubernetes.Data.Inmuebles;
 using NetKubernetes.Dtos.InmuebleDtos;
 using NetKubernetes.Middleware;
 using NetKubernetes.Models;
-using System.Net;
 
 namespace NetKubernetes.Controllers;
 
@@ -53,6 +53,13 @@ public class InmuebleController : ControllerBase{
         return Ok(_mapper.Map<IEnumerable<InmuebleResponseDto>>(inmuebles));
     }
 
+    [HttpGet("bookmark")]
+    public async Task<ActionResult<IEnumerable<InmuebleResponseDto>>> GetBookmark()
+    {
+        var inmuebles = await _repository.GetBookmarkEnabled();
+        return Ok(_mapper.Map<IEnumerable<InmuebleResponseDto>>(inmuebles));
+    }
+
 
     [HttpGet("{id}", Name = "GetInmuebleById")]
     public async Task<ActionResult<InmuebleResponseDto>> GetInmuebleById(int id)
@@ -67,10 +74,7 @@ public class InmuebleController : ControllerBase{
             );
 
         }
-
-
         return Ok(_mapper.Map<InmuebleResponseDto>(inmueble));
-
     }
 
     [HttpPost]

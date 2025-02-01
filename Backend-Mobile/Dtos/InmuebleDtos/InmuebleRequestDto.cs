@@ -10,5 +10,5 @@ public class InmuebleRequestDto {
     public decimal Precio { get; set; }
 
     public string? Picture { get; set; }
-     
+
 }

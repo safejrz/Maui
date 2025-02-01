@@ -22,7 +22,7 @@ public class InmuebleRepository : IInmuebleRepository
     {
         _contexto = contexto;
         _usuarioSesion = sesion;
-        _userManager = userManager; 
+        _userManager = userManager;
     }
 
     public async Task CreateInmueble(Inmueble inmueble)
@@ -69,7 +69,7 @@ public class InmuebleRepository : IInmuebleRepository
         //return await _contexto.Inmuebles!.Where(s => s.Nombre!.Contains(search) || s.Detalle!.Contains(search)).ToListAsync();
 
         var inmuebles = from c in _contexto.Inmuebles!
-                        where EF.Functions.Like(c.Detalle!, $"%{search}%") || EF.Functions.Like(c.Nombre!, $"%{search}%")
+                        where EF.Functions.Like(c.Detalle!, $"%{search}%") || EF.Functions.Like(c.Nombre!, $"%{search}%" ) || EF.Functions.Like(c.Direccion!, $"%{search}%" )
                         select c;
 
         return await inmuebles.ToListAsync();
@@ -103,5 +103,15 @@ public class InmuebleRepository : IInmuebleRepository
 
         return await inmuebles.ToListAsync();
     }
+
+     public async Task<IEnumerable<Inmueble>> GetBookmarkEnabled()
+    {
+        var inmuebles = from c in _contexto.Inmuebles!
+                        where c.IsBookmarkEnabled == true
+                        select c;
+
+        return await inmuebles.ToListAsync();
+    }
+
 
 }

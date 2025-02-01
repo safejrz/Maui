@@ -19,6 +19,8 @@ public class Inmueble {
     public decimal Precio { get; set; }
 
     public string? ImagenUrl { get; set; }
+    public string? Imagen { get; set; }
+
     public DateTime? FechaCreacion { get; set; }
 
     public Guid? UsuarioId { get; set; }
@@ -28,6 +30,8 @@ public class Inmueble {
 
     public bool IsTrending {get;set;}
 
+    public bool IsBookmarkEnabled {get;set;}
+ 
     public virtual ICollection<Usuario>? Usuarios { get; set; }
-     public virtual ICollection<Bookmark>? Bookmarks { get; set; }
+    public virtual ICollection<Bookmark>? Bookmarks { get; set; } 
 }

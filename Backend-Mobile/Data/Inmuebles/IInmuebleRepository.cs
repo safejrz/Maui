@@ -12,7 +12,7 @@ public interface IInmuebleRepository {
 
     Task CreateInmueble(Inmueble inmueble);
 
-    Task DeleteInmueble(int id); 
+    Task DeleteInmueble(int id);
 
     Task<IEnumerable<Inmueble>> SearchInmuebles(string search);
 
@@ -20,4 +20,5 @@ public interface IInmuebleRepository {
 
     Task<IEnumerable<Inmueble>> GetTrending();
     
+    Task<IEnumerable<Inmueble>> GetBookmarkEnabled();
 }

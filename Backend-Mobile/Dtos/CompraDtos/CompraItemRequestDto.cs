@@ -7,5 +7,5 @@ public class CompraItemRequestDto {
     public int ProductId { get; set; }
 
     public int Cantidad { get; set; }
-    public decimal ProductoPrecio { get; set; } 
+    public decimal ProductoPrecio { get; set; }
 }

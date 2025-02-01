@@ -18,7 +18,7 @@ public class AppDbContext : IdentityDbContext<Usuario>{
         builder.Entity<Category>()
                 .HasMany(c => c.Inmuebles)
                 .WithOne(p => p.Category)
-                .HasForeignKey(p => p.CategoryId) 
+                .HasForeignKey(p => p.CategoryId)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Restrict);
 

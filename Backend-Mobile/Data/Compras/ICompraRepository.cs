@@ -1,4 +1,4 @@
-using NetKubernetes.Models; 
+using NetKubernetes.Models;
 
 namespace NetKubernetes.Data.Compras;
 

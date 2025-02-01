@@ -7,7 +7,7 @@ using NetKubernetes.Middleware;
 using NetKubernetes.Models;
 
 namespace NetKubernetes.Controllers;
- 
+
 [Route("api/[controller]")]
 [ApiController]
 public class BookmarkController : ControllerBase

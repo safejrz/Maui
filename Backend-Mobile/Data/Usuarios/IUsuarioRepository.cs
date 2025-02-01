@@ -9,5 +9,5 @@ public interface IUsuarioRepository {
 
     Task<UsuarioResponseDto> Login(UsuarioLoginRequestDto request);
 
-    Task<UsuarioResponseDto> RegistroUsuario(UsuarioRegistroRequestDto request); 
+    Task<UsuarioResponseDto> RegistroUsuario(UsuarioRegistroRequestDto request);
 }

@@ -7,7 +7,8 @@ public class BookmarkResponseDto
 
     public decimal Precio { get; set; }
 
-    public string?  imagenUrl{ get; set; } 
+    public string?  ImagenUrl{ get; set; }
+    public string?  Imagen{ get; set; }
 
     public string?  Address{ get; set; }
     public bool  Status{ get; set; }
