@@ -20,9 +20,15 @@
     </Shell.FlyoutFooter>
 
     <ShellContent
+    Title="Acerca de mi tienda"
+    ContentTemplate="{DataTemplate views:AboutPage}"
+    Route="AboutPage" />
+
+    <ShellContent
         Title="Resumen de Ventas"
         ContentTemplate="{DataTemplate views:ResumenPage}"
         Route="ResumenPage" />
+    
     <FlyoutItem Title="Configuracion">
         <Tab Title="Resumen">
             <ShellContent Title="Data System"
@@ -54,10 +60,7 @@
         ContentTemplate="{DataTemplate views:HelpSupportPage}"
         Route="HelpSupportPage" />
 
-    <ShellContent
-    Title="Acerca de mi tienda"
-    ContentTemplate="{DataTemplate views:AboutPage}"
-    Route="AboutPage" />
+
 
     <MenuItem
         Text="Abrir pagina"

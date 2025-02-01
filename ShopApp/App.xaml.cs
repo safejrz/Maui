@@ -5,12 +5,10 @@ namespace ShopApp
 {
     public partial class App : Application
     {
-        public App(LoginPage loginPage, ShopOutDbContext context)
+        public App()
         {
             InitializeComponent();
-            context.Database.EnsureCreated();
-            var accessToken = Preferences.Get("accessToken", string.Empty);            
-            MainPage = string.IsNullOrEmpty(accessToken) ? loginPage : new AppShell();
+            MainPage = new AppShell();
         }
     }
 }
