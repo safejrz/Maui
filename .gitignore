@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /S013E02-backend-mobile.zip
+*.rar
+*.zip
