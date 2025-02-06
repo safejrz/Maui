@@ -71,6 +71,7 @@ public static class MauiProgram
 
         Routing.RegisterRoute(nameof(ProductDetailsPage), typeof(ProductDetailsPage));
         Routing.RegisterRoute(nameof(HelpSupportDetailPage), typeof(HelpSupportDetailPage));
+        // This is required to show the login page at first run.
         Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
 
 #if DEBUG
