@@ -3,59 +3,85 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.Views.MainPage">
 
-    <Grid Grid.ColumnDefinitions="Auto, Auto" Grid.RowDefinitions="Auto, Auto, Auto" VerticalOptions="Center" HorizontalOptions="Center" >
-        <Ellipse 
-            WidthRequest="50"
-            HeightRequest="50"
-            Fill="{AppThemeBinding Light='LightSteelBlue', Dark='DarkBlue'}"
-            Margin="4" />
-        <Label x:Name="category"
-               VerticalTextAlignment="Center" 
-               HorizontalTextAlignment="Center"
-               FontSize="30" />
-        <Label Text="Categorias"
-               VerticalTextAlignment="Center" 
-               HorizontalTextAlignment="Center"
-               FontSize="30"
-               Grid.Column="1"/>
+
+
+    <Grid
+        ColumnDefinitions="Auto, Auto"
+        RowDefinitions="Auto, Auto, Auto"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        >
+
+        <Ellipse WidthRequest="50" HeightRequest="50" Fill="LightSteelBlue" Margin="4"  />
+        <Label 
+            x:Name="category" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center" 
+            FontSize="30"
+            />
+        <Label 
+            Grid.Column="1"
+            Text="Categorias" 
+            VerticalTextAlignment="Center" 
+            FontSize="30" 
+            />
+
 
         <Ellipse 
-            WidthRequest="50"
-            HeightRequest="50"
-            Fill="{AppThemeBinding Light='LightSteelBlue', Dark='DarkBlue'}"
-            Margin="4"
             Grid.Row="1"
+            WidthRequest="50" 
+            HeightRequest="50" 
+            Fill="LightSteelBlue" 
+            Margin="4"  
             />
-        <Label x:Name="product"
-            VerticalTextAlignment="Center" 
-            HorizontalTextAlignment="Center"
-            FontSize="30"
-            Grid.Row="1" />
-        <Label Text="Productos"
-            VerticalTextAlignment="Center" 
-            HorizontalTextAlignment="Center"
-            FontSize="30"
+        <Label 
             Grid.Row="1"
-            Grid.Column="1"/>
-        
+            x:Name="product" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center" 
+            FontSize="30"
+            />
+        <Label 
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Productos" 
+            VerticalTextAlignment="Center" 
+            FontSize="30" 
+            />
+
+
         <Ellipse 
-            WidthRequest="50"
-            HeightRequest="50"
-            Fill="{AppThemeBinding Light='LightSteelBlue', Dark='DarkBlue'}"
-            Margin="4"
             Grid.Row="2"
+            WidthRequest="50" 
+            HeightRequest="50" 
+            Fill="LightSteelBlue" 
+            Margin="4"  
             />
-        <Label x:Name="client"
-           VerticalTextAlignment="Center" 
-           HorizontalTextAlignment="Center"
-           FontSize="30"
-           Grid.Row="2" />
-        <Label Text="Clientes"
-           VerticalTextAlignment="Center" 
-           HorizontalTextAlignment="Center"
-           FontSize="30"
-           Grid.Row="2"
-           Grid.Column="1"/>
+        <Label 
+            Grid.Row="2"
+            x:Name="client" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center" 
+            FontSize="30"
+            />
+        <Label 
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="Clientes" 
+            VerticalTextAlignment="Center" 
+            FontSize="30" 
+            />
+
+
+
+
 
     </Grid>
+    
+    
+    
+    
+
+
+
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShopApp.Services;
 
@@ -21,7 +22,6 @@ public partial class LoginViewModel : ViewModelGlobal
         _connectivity = connectivity;
         _securityService = securityService;
         _connectivity.ConnectivityChanged += _connectivity_ConnectivityChanged;
-
     }
 
     [RelayCommand(CanExecute = nameof(StatusConnection))]
@@ -32,23 +32,21 @@ public partial class LoginViewModel : ViewModelGlobal
         {
             Application.Current.MainPage = new AppShell();
         }
-        else
-        {
-            //Application.Current.MainPage = new AppShell();
-            Shell.Current.DisplayAlert("Error", "Usuario o contraseña incorrectos", "Aceptar");
+        else {
+            await Shell.Current.DisplayAlert("Mensaje", "Ingreso credenciales erroneas", "Aceptar");
         }
+
     }
 
-    private void _connectivity_ConnectivityChanged(object? sender, ConnectivityChangedEventArgs e)
+    private void _connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
     {
         LoginMethodCommand.NotifyCanExecuteChanged();
     }
 
-
+    
 
     private bool StatusConnection()
     {
-        //TODO: figure out if you can simplify this
         return _connectivity.NetworkAccess == NetworkAccess.Internet ? true : false;
     }
 

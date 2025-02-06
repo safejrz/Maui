@@ -1,14 +1,13 @@
 ﻿using ShopApp.DataAccess;
 using ShopApp.Views;
 
-namespace ShopApp
+namespace ShopApp;
+
+public partial class App : Application
 {
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-            MainPage = new AppShell();
-        }
+	public App()
+	{
+		InitializeComponent();
+		MainPage = new AppShell();
     }
 }

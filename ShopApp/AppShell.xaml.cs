@@ -1,5 +1,5 @@
-﻿namespace ShopApp
-{
+﻿namespace ShopApp;
+
     public partial class AppShell : Shell
     {
         public AppShell()
@@ -13,4 +13,3 @@
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
     }
-}

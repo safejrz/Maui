@@ -86,7 +86,7 @@
 	  <MauiXaml Update="Views\ClientsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\HelpSupportDetailsPage.xaml">
+	  <MauiXaml Update="Views\HelpSupportDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HelpSupportPage.xaml">
@@ -113,8 +113,8 @@
 	  <Compile Update="Platforms\Windows\DatabaseRutaService.cs">
 	    <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
 	  </Compile>
-	  <Compile Update="Views\HelpSupportDetailsPage.xaml.cs">
-	    <DependentUpon>HelpSupportDetailsPage.xaml</DependentUpon>
+	  <Compile Update="Views\HelpSupportDetailPage.xaml.cs">
+	    <DependentUpon>HelpSupportDetailPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\ProductDetailsPage.xaml.cs">
 	    <DependentUpon>ProductDetailsPage.xaml</DependentUpon>

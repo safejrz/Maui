@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShopApp.Views.HelpSupportDetailsPage"
+             x:Class="ShopApp.Views.HelpSupportDetailPage"
              xmlns:vm="clr-namespace:ShopApp.ViewModels"
-             Title="HelpSupportDetailsPage">
+             Title="HelpSupportDetailPage">
 
     <FlexLayout Direction="Column" JustifyContent="Center" AlignContent="Center">
 
@@ -17,11 +17,11 @@
             SelectionMode="Single"
                 />
 
-                <HorizontalStackLayout>
+                <HorizontalStackLayout VerticalOptions="Center">
                     <Stepper
                 Minimum="1"
                 Maximum="100"
-                x:Name="Quantity"
+                x:Name="quantity"
                 Value="{Binding Quantity, Mode=TwoWay}"
                 >
                     </Stepper>

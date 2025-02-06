@@ -4,10 +4,13 @@ namespace ShopApp.Views;
 
 public partial class HelpSupportPage : ContentPage
 {
-    public HelpSupportPage(HelpSupportViewModel helpSupportViewModel)
-    {
-        InitializeComponent();
-        BindingContext = helpSupportViewModel;
-    }
+	public HelpSupportPage(HelpSupportViewModel viewModel)
+	{
+		InitializeComponent();
+		BindingContext = viewModel;
+	}
+	   
 }
+
+
 

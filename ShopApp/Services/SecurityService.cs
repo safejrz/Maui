@@ -19,7 +19,7 @@ public class SecurityService
 
     public async Task<bool> Login(string email, string password)
     {
-        var uri = $"{settings.UrlBase}api/usuario/login";
+        var uri = $"{settings.UrlBase}/api/usuario/login";
         var loginRequest = new LoginRequest
         {
             Email = email,
@@ -35,10 +35,10 @@ public class SecurityService
         var jsonResultado = await response.Content.ReadAsStringAsync();
         var resultado = JsonConvert.DeserializeObject<UsuarioResponse>(jsonResultado);
 
-        Preferences.Set("token", resultado.Token);
+        Preferences.Set("accesstoken", resultado.Token);
         Preferences.Set("userid", resultado.Id);
         Preferences.Set("email", resultado.Email);
-        Preferences.Set("nombre", $"{resultado.Nombre} {resultado.Apellido}");
+        Preferences.Set("nombre", "Javier Rivera"); // $"{resultado.Nombre} {resultado.Apellido}");
         Preferences.Set("telefono", resultado.Telefono);
         Preferences.Set("username", resultado.UserName);
 

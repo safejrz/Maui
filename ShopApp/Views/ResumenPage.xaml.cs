@@ -4,9 +4,9 @@ namespace ShopApp.Views;
 
 public partial class ResumenPage : ContentPage
 {
-	public ResumenPage(ResumenViewModel resumenViewModel)
+	public ResumenPage(ResumenViewModel viewModel)
 	{
 		InitializeComponent();
-        BindingContext = resumenViewModel;
-    }
+		BindingContext = viewModel;
+	}
 }

@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.Views.ClientsPage"
              Title="ClientsPage">
+
+
+
     <CarouselView
         ItemsSource="{Binding Clients}"
         CurrentItem="{Binding SelectedClient, Mode=TwoWay}"
@@ -10,7 +13,7 @@
         <CarouselView.ItemTemplate>
             <DataTemplate>
                 <VerticalStackLayout VerticalOptions="Center">
-                    <Image Source="dotnet_bot.png" HeightRequest="200" />
+                    <Image Source="dotnet_bot.svg" WidthRequest="200"/>
                     <Label
                         Text="{Binding Name}"
                         HorizontalOptions="Center"
@@ -21,8 +24,14 @@
                         Text="{Binding Address}"
                         HorizontalOptions="Center"
                         />
-                </VerticalStackLayout>
+
+                </VerticalStackLayout>                
             </DataTemplate>
         </CarouselView.ItemTemplate>
     </CarouselView>
+
+
+
+
+
 </ContentPage>

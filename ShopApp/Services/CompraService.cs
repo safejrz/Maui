@@ -7,18 +7,18 @@ namespace ShopApp.Services;
 
 public class CompraService
 {
-    private HttpClient _client = new HttpClient();
+    private HttpClient _client;
     private Settings _settings;
 
     public CompraService(HttpClient client, IConfiguration configuration)
     {
         _client = client;
-        _settings = configuration.GetSection(nameof(Settings)).Get<Settings>();   
+        _settings = configuration.GetRequiredSection(nameof(Settings)).Get<Settings>();   
     }
 
     public async Task<bool> EnviarData(IEnumerable<ShopCart> compras)
     {
-        var uri = $"{_settings.UrlBase}api/compra";
+        var uri = $"{_settings.UrlBase}/api/compra";
 
 
         var body = new

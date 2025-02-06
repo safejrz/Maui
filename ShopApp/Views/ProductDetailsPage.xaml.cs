@@ -4,9 +4,9 @@ namespace ShopApp.Views;
 
 public partial class ProductDetailsPage : ContentPage
 {
-    public ProductDetailsPage(ProductDetailsViewModel productDetailsViewModel)
+    public ProductDetailsPage(ProductDetailsViewModel viewModel)
     {
-        InitializeComponent();
-        BindingContext = productDetailsViewModel;
+		InitializeComponent();
+		BindingContext = viewModel;
     }
 }

@@ -7,12 +7,12 @@ using System.Windows.Input;
 
 namespace ShopApp.ViewModels;
 
-public partial class HelpSupportDetailsViewModel : ViewModelGlobal, IQueryAttributable
+public partial class HelpSupportDetailViewModel : ViewModelGlobal, IQueryAttributable
 {
     private readonly IConnectivity _connectivity;
 
     [ObservableProperty]
-    private ObservableCollection<ShopCart> _compras = new ObservableCollection<ShopCart>();
+    private ObservableCollection<ShopCart> compras = new ObservableCollection<ShopCart>();
 
     [ObservableProperty]
     private int clientId;
@@ -32,7 +32,7 @@ public partial class HelpSupportDetailsViewModel : ViewModelGlobal, IQueryAttrib
 
     private readonly ShopOutDbContext _outDbContext;
 
-    public HelpSupportDetailsViewModel(IConnectivity connectivity, CompraService compraService, ShopOutDbContext outDbContext)
+    public HelpSupportDetailViewModel(IConnectivity connectivity, CompraService compraService, ShopOutDbContext outDbContext)
     {
         var database = new ShopDbContext();
         Products = new ObservableCollection<Product>(database.Products);

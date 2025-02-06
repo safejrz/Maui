@@ -5,7 +5,9 @@ using ShopApp.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
+
 namespace ShopApp.ViewModels;
+
 
 public partial class HelpSupportViewModel : ViewModelGlobal
 {
@@ -31,8 +33,13 @@ public partial class HelpSupportViewModel : ViewModelGlobal
     {
         if (e.PropertyName == nameof(SelectedClient))
         {
-            var uri = $"{nameof(HelpSupportDetailsPage)}?id={SelectedClient.Id}"; 
+            var uri = $"{nameof(HelpSupportDetailPage)}?id={SelectedClient.Id}"; 
             await _navigationService.GoToAsync(uri);
         }
     }
+
+    
+
 }
+
+

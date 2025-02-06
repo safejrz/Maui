@@ -8,7 +8,7 @@ public partial class ProductsPage : ContentPage
 {
     public ProductsPage(ProductViewModel viewModel)
     {
-        InitializeComponent();
-        BindingContext = viewModel;
+ 	InitializeComponent();
+		BindingContext= viewModel;
     }
 }

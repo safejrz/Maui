@@ -9,10 +9,11 @@ public partial class AboutPage : ContentPage
 
     protected override async void OnAppearing()
     {
-        var accessToken = Preferences.Get("accessToken", string.Empty);
-        if(string.IsNullOrEmpty(accessToken))
+        var accesstoken = Preferences.Get("accesstoken", string.Empty);
+        if (string.IsNullOrEmpty(accesstoken))
         {
-          await Shell.Current.GoToAsync($"{nameof(LoginPage)}");
+            var pagename = $"{nameof(LoginPage)}";
+            await Shell.Current.GoToAsync(pagename);
         }
     }
 }

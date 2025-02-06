@@ -3,4 +3,6 @@
 public class Settings
 {
     public string UrlBase { get; set; }
+
 }
+

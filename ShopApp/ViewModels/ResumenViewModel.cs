@@ -17,7 +17,6 @@ public partial class ResumenViewModel : ViewModelGlobal
     int clients;
 
     [ObservableProperty]
-
     decimal total;
 
     [ObservableProperty]
@@ -26,6 +25,7 @@ public partial class ResumenViewModel : ViewModelGlobal
     public ResumenViewModel(ShopOutDbContext shopOutDbContext)
     {
         var db = new ShopDbContext();
+
         Visitas = shopOutDbContext.Compras
             .ToList()
             .DistinctBy(s => s.ClientId)
@@ -37,4 +37,6 @@ public partial class ResumenViewModel : ViewModelGlobal
         Total = shopOutDbContext.Compras.ToList().Sum(s => s.Cantidad * s.Precio);
         TotalProducts = shopOutDbContext.Compras.Sum(s => s.Cantidad);
     }
+
 }
+
