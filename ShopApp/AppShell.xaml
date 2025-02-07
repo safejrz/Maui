@@ -6,10 +6,15 @@
     xmlns:views="clr-namespace:ShopApp.Views"
     Shell.FlyoutBehavior="Flyout"
     xmlns:info="clr-namespace:Microsoft.Maui.ApplicationModel;assembly=Microsoft.Maui.Essentials"
-    Title="ShopApp">
+    >
 
+    
+    
+    
+    
+    
     <Shell.FlyoutHeader>
-        <Image Source="dotnet_bot.svg" WidthRequest="120" Margin="10" />
+        <Image Source="dotnet_bot.svg" WidthRequest="120" Margin="10"/>
     </Shell.FlyoutHeader>
 
     <Shell.FlyoutFooter>
@@ -20,54 +25,65 @@
     </Shell.FlyoutFooter>
 
     <ShellContent
-    Title="Acerca de mi tienda"
-    ContentTemplate="{DataTemplate views:AboutPage}"
-    Route="AboutPage" />
+        Title="Acerca de mi tienda"
+        ContentTemplate="{DataTemplate views:AboutPage}"
+        Route="AboutPage" />
+
 
     <ShellContent
         Title="Resumen de Ventas"
         ContentTemplate="{DataTemplate views:ResumenPage}"
         Route="ResumenPage" />
-    
+
+
+   
+
+
     <FlyoutItem Title="Configuracion">
         <Tab Title="Resumen">
-            <ShellContent Title="Data System"
+            <ShellContent
+            Title="Data System"
             ContentTemplate="{DataTemplate views:MainPage}"
             Route="MainPage" />
         </Tab>
-
+         
         <Tab Title="Products">
-            <ShellContent Title="Productos"
+            <ShellContent
+            Title="Productos"
             ContentTemplate="{DataTemplate views:ProductsPage}"
             Route="ProductsPage" />
         </Tab>
 
         <Tab Title="Categories">
-            <ShellContent Title="Categorias"
+            <ShellContent
+            Title="Categorias"
             ContentTemplate="{DataTemplate views:CategoriesPage}"
             Route="CategoriesPage" />
         </Tab>
 
         <Tab Title="Clients">
-            <ShellContent Title="Clientes"
+            <ShellContent
+            Title="Clientes"
             ContentTemplate="{DataTemplate views:ClientsPage}"
             Route="ClientsPage" />
         </Tab>
+
     </FlyoutItem>
 
-    <ShellContent
+
+
+    <ShellContent 
         Title="Help Support"
         ContentTemplate="{DataTemplate views:HelpSupportPage}"
-        Route="HelpSupportPage" />
+        Route="HelpSupportPage"
+        />
 
 
-
-    <MenuItem
+    <MenuItem 
         Text="Abrir pagina"
-        Clicked="MenuItem_Clicked">
-        
-    </MenuItem>
-    
+        Clicked="MenuItem_Clicked"
+        />
+
     <FlyoutItem Title="Venta de Inmuebles">
         <Tab Title="Resumen" Icon="home_icon">
             <ShellContent 
@@ -95,5 +111,9 @@
 
 
     </FlyoutItem>
+ 
     
+    
+    
+
 </Shell>

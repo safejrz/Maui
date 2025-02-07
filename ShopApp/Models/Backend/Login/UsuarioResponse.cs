@@ -1,5 +1,4 @@
 ﻿namespace ShopApp.Models.Backend.Login;
-
 public class UsuarioResponse
 {
     public string Id { get; set; }

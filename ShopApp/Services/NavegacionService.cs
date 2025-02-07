@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopApp.Services;
 
-public class NavigationService : INavigationService
+public class NavegacionService : INavegacionService
 {
     public Task GoToAsync(string uri)
     {

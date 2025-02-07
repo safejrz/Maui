@@ -20,8 +20,8 @@ public partial class HelpSupportViewModel : ViewModelGlobal
     [ObservableProperty]
     private Client selectedClient;
 
-    private readonly INavigationService _navigationService;
-    public HelpSupportViewModel(INavigationService navigationService)
+    private readonly INavegacionService _navigationService;
+    public HelpSupportViewModel(INavegacionService navigationService)
     {
         var database = new ShopDbContext();
         Clients = new ObservableCollection<Client>(database.Clients);

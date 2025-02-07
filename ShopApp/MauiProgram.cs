@@ -31,7 +31,7 @@ public static class MauiProgram
 
 		builder.Configuration.AddConfiguration(config);
 
-		builder.Services.AddSingleton<INavigationService, NavigationService>();
+		builder.Services.AddSingleton<INavegacionService, NavegacionService>();
 		builder.Services.AddTransient<HelpSupportViewModel>();
 		builder.Services.AddTransient<HelpSupportPage>();
 		builder.Services.AddTransient<HelpSupportDetailViewModel>();
@@ -64,6 +64,9 @@ public static class MauiProgram
         builder.Services.AddTransient<SettingsViewModel>();
         builder.Services.AddTransient<SettingsPage>();
 
+        builder.Services.AddTransient<InmuebleListViewModel>();
+        builder.Services.AddTransient<InmuebleListPage>();
+
 
         var dbContext = new ShopDbContext();
 		dbContext.Database.EnsureCreated();
@@ -71,6 +74,9 @@ public static class MauiProgram
 
         Routing.RegisterRoute(nameof(ProductDetailsPage), typeof(ProductDetailsPage));
         Routing.RegisterRoute(nameof(HelpSupportDetailPage), typeof(HelpSupportDetailPage));
+
+        Routing.RegisterRoute(nameof(InmuebleListPage), typeof(InmuebleListPage));
+
         // This is required to show the login page at first run.
         Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
 

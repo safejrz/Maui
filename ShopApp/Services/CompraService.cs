@@ -23,16 +23,13 @@ public class CompraService
 
         var body = new
         {
-            data = compras.Select(compra => new
-            {
-                clientId = compra.ClientId,
-                productId = compra.ProductId,
-                cantidad = compra.Quantity,
-                productoPrecio = compra.ProductPrice,
-            }).ToArray()
+            data = compras
         };
 
         var result = await _client.PostAsJsonAsync(uri, body);
+
         return result.IsSuccessStatusCode;
     }
+
 }
+

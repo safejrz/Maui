@@ -10,7 +10,7 @@ namespace ShopApp.ViewModels;
 
 public partial class ProductViewModel : ViewModelGlobal
 {
-    private readonly INavigationService _navigationService;
+    private readonly INavegacionService _navigationService;
 
     [ObservableProperty]
     ObservableCollection<Product> products;
@@ -21,7 +21,7 @@ public partial class ProductViewModel : ViewModelGlobal
     [ObservableProperty]
     bool isRefreshing;
 
-    public ProductViewModel(INavigationService navigationService)
+    public ProductViewModel(INavegacionService navigationService)
     {
         this._navigationService = navigationService;
         LoadProductsList();

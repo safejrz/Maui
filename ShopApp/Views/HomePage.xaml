@@ -48,6 +48,8 @@
                     SelectionMode="Single"
                     HeightRequest="50"
                     ItemsSource="{Binding Categories}"
+                    SelectedItem="{Binding CategoriaSeleccionada}"
+                    SelectionChangedCommand="{Binding CategoryEventSelectedCommand}"
                     BackgroundColor="White"
                     >
                     <CollectionView.ItemsLayout>
@@ -61,7 +63,7 @@
                                 HorizontalOptions="Center"
                                 >
                                 <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="10,10,10,10"  />
+                                    <RoundRectangle CornerRadius="10"  />
                                 </Border.StrokeShape>
 
                                 <HorizontalStackLayout Spacing="5" HeightRequest="25">
