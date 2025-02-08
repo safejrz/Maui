@@ -27,7 +27,7 @@ public partial class LoginViewModel : ViewModelGlobal
     [RelayCommand(CanExecute = nameof(StatusConnection))]
     private async Task LoginMethod()
     {
-        var resultado = await _securityService.Login(Email, Password);
+         var resultado = await _securityService.Login(Email, Password);
         if (resultado)
         {
             Application.Current.MainPage = new AppShell();
