@@ -67,6 +67,8 @@ public static class MauiProgram
         builder.Services.AddTransient<InmuebleListViewModel>();
         builder.Services.AddTransient<InmuebleListPage>();
 
+        builder.Services.AddTransient<InmuebleDetailViewModel>();
+        builder.Services.AddTransient<InmuebleDetailPage>();
 
         var dbContext = new ShopDbContext();
 		dbContext.Database.EnsureCreated();
@@ -76,6 +78,7 @@ public static class MauiProgram
         Routing.RegisterRoute(nameof(HelpSupportDetailPage), typeof(HelpSupportDetailPage));
 
         Routing.RegisterRoute(nameof(InmuebleListPage), typeof(InmuebleListPage));
+        Routing.RegisterRoute(nameof(InmuebleDetailPage), typeof(InmuebleDetailPage));
 
         // This is required to show the login page at first run.
         Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));

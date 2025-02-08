@@ -92,6 +92,9 @@
 	  <MauiXaml Update="Views\HelpSupportPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\InmuebleDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\InmuebleListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

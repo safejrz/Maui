@@ -1,12 +1,17 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using ShopApp.Models.Backend.Inmueble;
 using ShopApp.Services;
+using ShopApp.Views;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace ShopApp.ViewModels;
 
 public partial class InmuebleListViewModel : ViewModelGlobal, IQueryAttributable
 {
+    [ObservableProperty]
+    InmuebleResponse _inmuebleSeleccionado;
+
     private readonly INavegacionService _navigationService;
 
     [ObservableProperty]
@@ -18,6 +23,20 @@ public partial class InmuebleListViewModel : ViewModelGlobal, IQueryAttributable
     {
         _navigationService = navigationService;
         _inmuebleService = inmuebleService;
+        PropertyChanged += InmuebleListViewModel_PropertyChanged;
+    }
+
+    private async void InmuebleListViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if(e.PropertyName == nameof(InmuebleSeleccionado))
+        {
+            if (InmuebleSeleccionado != null)
+            {
+                var uri = $"{nameof(InmuebleDetailPage)}?id={InmuebleSeleccionado.Id}";
+                await _navigationService.GoToAsync(uri);
+
+            }
+        }
     }
 
     public async void ApplyQueryAttributes(IDictionary<string, object> query)

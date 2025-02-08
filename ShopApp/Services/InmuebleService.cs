@@ -51,5 +51,16 @@ public class InmuebleService
 
         return JsonConvert.DeserializeObject<List<InmuebleResponse>>(resultado);
     }
+
+    public async Task<InmuebleResponse> GetInmuebleById(int inmuebleId)
+    {
+        var uri = $"{settings.UrlBase}/api/inmueble/{inmuebleId}";
+        client.DefaultRequestHeaders.Authorization = new
+            AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
+
+        var resultado = await client.GetStringAsync(uri);
+
+        return JsonConvert.DeserializeObject<InmuebleResponse>(resultado);
+    }
 }
 
