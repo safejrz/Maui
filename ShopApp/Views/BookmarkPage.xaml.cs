@@ -4,9 +4,17 @@ namespace ShopApp.Views;
 
 public partial class BookmarkPage : ContentPage
 {
-	public BookmarkPage(BookmarkViewModel viewModel)
+	private BookmarkViewModel _viewModel;
+
+    public BookmarkPage(BookmarkViewModel viewModel)
 	{
 		InitializeComponent();
 		BindingContext = viewModel;
-	}
+        this._viewModel = viewModel;
+    }
+
+    protected override void OnAppearing()
+    {
+        _viewModel.GetInmueblesCommand.Execute(this);
+    }
 }
