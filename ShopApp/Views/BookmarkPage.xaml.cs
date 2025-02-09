@@ -10,7 +10,7 @@ public partial class BookmarkPage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = viewModel;
-        this._viewModel = viewModel;
+        _viewModel = viewModel;
     }
 
     protected override void OnAppearing()

@@ -78,7 +78,7 @@ public class InmuebleService
 
     public async Task<List<InmuebleResponse>> GetBookmarks()
     {
-        var uri = $"{settings.UrlBase}/api/inmueble/bookmarks";
+        var uri = $"{settings.UrlBase}/api/inmueble/bookmark";
         client.DefaultRequestHeaders.Authorization = new
             AuthenticationHeaderValue("bearer", Preferences.Get("accesstoken", string.Empty));
 
