@@ -63,21 +63,21 @@ public partial class InmuebleDetailViewModel : ViewModelGlobal, IQueryAttributab
             UsuarioId = Preferences.Get("userid", string.Empty)
         };
 
-        _inmuebleService.SaveBookmark(bookmark);
+        await _inmuebleService.SaveBookmark(bookmark);
         await LoadDataAsync(Inmueble.Id);
     }
 
     [RelayCommand]
     async Task CallOwner()
     {
-        var confirmarLlamada = await Application.Current.MainPage.DisplayAlert(
+        var confirmarLlamada = Application.Current.MainPage.DisplayAlert(
             "¿Marcar este numero telefonico",
             $"¿Desea llamar a este numero? {Inmueble.Telefono}",
             "Si",
             "Cancelar"
             );
 
-        if (confirmarLlamada)
+        if (await confirmarLlamada)
         {
             try
             {
@@ -105,26 +105,26 @@ public partial class InmuebleDetailViewModel : ViewModelGlobal, IQueryAttributab
     async Task TextMessageOwner()
     {
         var message = new SmsMessage("Hola por favor enviame info sobre la vivienda", Inmueble.Telefono);
-        var confirmarMensajedeTexto = await Application.Current.MainPage.DisplayAlert(
+        var confirmarMensajeTexto = Application.Current.MainPage.DisplayAlert(
             "¿Envia un mensaje de texto",
             $"¿Envia un mensaje de texto a este numero? {Inmueble.Telefono}",
             "Si",
             "Cancelar"
             );
 
-        if (confirmarMensajedeTexto)
+        if (await confirmarMensajeTexto)
         {
             try
             {
                 Sms.ComposeAsync(message);
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 await Application.Current.MainPage.DisplayAlert("No se puede enviar este sms",
                     "El numero telefonico no es valido",
                     "Ok");
             }
-            catch (FeatureNotSupportedException ex)
+            catch (FeatureNotSupportedException)
             {
                 await Application.Current.MainPage.DisplayAlert("No se puede enviar este sms",
                     "El dispositivo no soporta llamadas telefonicas",
