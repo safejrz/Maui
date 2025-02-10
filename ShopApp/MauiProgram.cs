@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ShopApp.DataAccess;
 using ShopApp.Services;
@@ -23,7 +24,8 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
+            .UseMauiCommunityToolkit()
+            .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
@@ -70,6 +72,9 @@ public static class MauiProgram
         builder.Services.AddTransient<InmuebleDetailViewModel>();
         builder.Services.AddTransient<InmuebleDetailPage>();
 
+        builder.Services.AddTransient<InmuebleBusquedaViewModel>();
+        builder.Services.AddTransient<InmuebleBusquedaPage>();
+
         var dbContext = new ShopDbContext();
 		dbContext.Database.EnsureCreated();
 		dbContext.Dispose();
@@ -79,6 +84,8 @@ public static class MauiProgram
 
         Routing.RegisterRoute(nameof(InmuebleListPage), typeof(InmuebleListPage));
         Routing.RegisterRoute(nameof(InmuebleDetailPage), typeof(InmuebleDetailPage));
+
+        Routing.RegisterRoute(nameof(InmuebleBusquedaPage), typeof(InmuebleBusquedaPage));
 
         // This is required to show the login page at first run.
         Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
